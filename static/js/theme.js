@@ -155,38 +155,73 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   const body = document.body;
 
-  // Check for saved user preference, if any, on load of the website
-  const darkMode = localStorage.getItem("darkMode");
+  function setTeamBasedOnRealTime() {
+    const hour = new Date().getHours();
+    // Dark mode between 6 PM (18) and 6 AM (5:59)
+    const isDarkModeTime = hour >= 18 || hour < 6;
+    const currentTheme = body.classList.contains("dark-mode")
+      ? "enabled"
+      : null;
 
-  // If the user previously enabled dark mode, apply it
-  if (darkMode === "enabled") {
-    body.classList.add("dark-mode");
-    themeToggles.forEach((toggle) => {
-      const icon = toggle.querySelector("i");
-      icon.classList.remove("fa-moon");
-      icon.classList.add("fa-sun");
-    });
+    if (isDarkModeTime) {
+      if (currentTheme !== "enabled") {
+        body.classList.add("dark-mode");
+        updateIconsAndStorage("enabled");
+      }
+    } else {
+      if (currentTheme === "enabled") {
+        body.classList.remove("dark-mode");
+        updateIconsAndStorage(null);
+      }
+    }
   }
 
-  // When someone clicks the button
+  function updateIconsAndStorage(darkModeStatus) {
+    themeToggles.forEach((toggle) => {
+      const icon = toggle.querySelector("i");
+      if (darkModeStatus === "enabled") {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+      } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+      }
+    });
+    localStorage.setItem("darkMode", darkModeStatus);
+  }
+
+  // Attempt to set theme based on time initially
+  // User preference from localStorage will override this if it exists and differs
+  setTeamBasedOnRealTime();
+
+  // Check for saved user preference, if any, on load of the website
+  const savedDarkMode = localStorage.getItem("darkMode");
+
+  // If the user previously set a theme, respect it over the time-based one
+  // but only if it's different from what time-based logic would set
+  if (savedDarkMode !== null) {
+    const isDarkModeTime =
+      new Date().getHours() >= 18 || new Date().getHours() < 6;
+    const timeBasedTheme = isDarkModeTime ? "enabled" : null;
+    if (savedDarkMode !== timeBasedTheme) {
+      if (savedDarkMode === "enabled") {
+        body.classList.add("dark-mode");
+        updateIconsAndStorage("enabled");
+      } else {
+        body.classList.remove("dark-mode");
+        updateIconsAndStorage(null);
+      }
+    }
+  }
+
+  // When someone clicks the button for manual toggle
   themeToggles.forEach((button) => {
     button.addEventListener("click", () => {
-      // Toggle dark mode on
       body.classList.toggle("dark-mode");
-
-      // Update icons
-      themeToggles.forEach((toggle) => {
-        const icon = toggle.querySelector("i");
-        if (body.classList.contains("dark-mode")) {
-          icon.classList.remove("fa-moon");
-          icon.classList.add("fa-sun");
-          localStorage.setItem("darkMode", "enabled");
-        } else {
-          icon.classList.remove("fa-sun");
-          icon.classList.add("fa-moon");
-          localStorage.setItem("darkMode", null);
-        }
-      });
+      const newDarkModeStatus = body.classList.contains("dark-mode")
+        ? "enabled"
+        : null;
+      updateIconsAndStorage(newDarkModeStatus);
     });
   });
 });
