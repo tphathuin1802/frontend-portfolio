@@ -1603,6 +1603,73 @@ section {
 }
 
 @media (max-width: 480px) {
+  /* General Typography Adjustments */
+  h1 {
+    font-size: 2.5rem; /* Reduced from potentially larger sizes */
+  }
+  h2,
+  .section-title {
+    font-size: 1.8rem; /* Reduced for better fit */
+  }
+  h3 {
+    font-size: 1.4rem; /* Reduced for better fit */
+  }
+
+  /* Section Padding Adjustments */
+  .section-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Hero Section Adjustments */
+  .hero-title {
+    font-size: 2.2rem; /* More specific adjustment for hero title */
+  }
+  .hero-pretitle {
+    font-size: 0.9rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .cta-buttons .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Profile image in hero section */
+  .profile-image-container {
+    width: 180px; /* Smaller profile image */
+    height: 180px;
+    margin-bottom: 1rem;
+  }
+
+  /* Project Card Adjustments */
+  .project-card {
+    padding: 0.8rem;
+  }
+  .project-card-content h3 {
+    font-size: 1.2rem;
+  }
+  .project-card-content p {
+    font-size: 0.85rem;
+  }
+  .tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  /* Footer Adjustments */
+  .footer-section h3 {
+    font-size: 1.3rem;
+  }
+  .footer-links a,
+  .contact-info li,
+  .social-links a,
+  .copyright p,
+  .footer-extra-links a {
+    font-size: 0.9rem;
+  }
+
   .education-item {
     flex-direction: column;
     align-items: flex-start;
@@ -1610,6 +1677,31 @@ section {
   }
   .education-item-image-container {
     margin-bottom: 1rem;
+  }
+}
+
+/* Additional rule for very small screens if the above isn't enough */
+@media (max-width: 380px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2,
+  .section-title {
+    font-size: 1.6rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .profile-image-container {
+    width: 150px;
+    height: 150px;
+  }
+  .cta-buttons .btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
   }
 }
 
