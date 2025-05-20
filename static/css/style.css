@@ -98,9 +98,10 @@ h6,
 }
 
 .btn:hover {
-  background-color: var(--text-color) !important;
-  color: var(--bg-color) !important;
-  border-color: var(--bg-color) !important;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--bg-color);
+  transform: translateY(-2px);
 }
 
 body {
@@ -1253,7 +1254,7 @@ section {
 
 .contact-content-wrapper {
   display: flex;
-  align-items: center;
+  align-items: stretch; /* Make columns equal height */
   gap: 3rem;
   background: var(--card-bg-color, var(--bg-color));
   padding: 3rem;
@@ -1262,24 +1263,75 @@ section {
   border: 1px solid var(--border-color, #e0e0e0);
 }
 
-.contact-image-container {
-  flex: 1 1 40%;
-  max-width: 450px;
+/* New Columns for Contact Section */
+.contact-left-column {
+  flex: 1; /* Changed from 1 1 40% to share space equally */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column; /* Stack image and button vertically */
+  justify-content: space-between; /* Pushes button to bottom if image doesn't fill */
+}
+
+.contact-right-column {
+  /* This is the form */
+  flex: 1; /* Changed from 1 1 55% to share space equally */
+}
+
+.contact-image-container {
+  /* Removed flex: 1 1 40%; max-width: 450px; */
+  /* display: flex; align-items: center; justify-content: center; */
+  /* These are now handled by contact-left-column */
+  width: 100%;
+  flex-grow: 1; /* Allow image container to take available vertical space */
+  display: flex; /* For the image to stretch */
 }
 
 .contact-image {
   width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: contain;
+  height: 100%; /* Image tries to fill the container's height */
+  max-height: 400px; /* Remove if we want it to stretch with the form */
+  object-fit: cover; /* Was contain, try cover for better fill, might crop */
   border-radius: var(--border-radius-sm, 8px);
 }
 
+button.btn-visit-blog {
+  /* Changed selector for increased specificity */
+  margin-top: 1.5rem;
+  width: 100%; /* Make button full width of its column */
+  padding: 0.9rem 1.5rem; /* Match submit button */
+  font-size: 1.15rem; /* Match submit button */
+  font-weight: 600; /* Match submit button */
+  border-radius: var(--border-radius-sm, 6px); /* Match submit button */
+  text-transform: uppercase; /* Match submit button */
+  letter-spacing: 0.5px; /* Match submit button */
+  cursor: pointer; /* Add cursor pointer */
+  background-color: var(--item-bg-color);
+  color: var(--item-text-color);
+  border: 1px solid var(--item-border-color); /* Ensure border is 1px like submit */
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease; /* Add transition */
+  display: flex; /* Use flex for internal alignment */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  gap: 0.5rem; /* Space between icon and text */
+  height: 3.7rem; /* Explicit height for consistency */
+}
+
+button.btn-visit-blog:hover {
+  /* Changed selector for increased specificity */
+  background-color: var(--item-bg-hover-color);
+  border-color: var(--item-border-hover-color);
+  color: var(--item-text-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex; /* Use flex for internal alignment */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  gap: 0.5rem; /* Space between icon and text */
+  height: 3.7rem; /* Explicit height for consistency */
+}
+
 .contact-form {
-  flex: 1 1 55%;
+  /* flex: 1 1 55%; */ /* This is now on .contact-right-column */
   background: transparent;
   border-radius: 0;
   box-shadow: none;
@@ -1332,9 +1384,14 @@ section {
   margin-top: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease,
     border-color 0.3s ease;
-  width: 100%;
+  width: 100%; /* Make button full width of its column */
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: flex; /* Use flex for internal alignment */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  gap: 0.5rem; /* Space between icon and text */
+  height: 3.7rem; /* Explicit height for consistency */
 }
 
 .contact-form button[type="submit"]:hover {
@@ -1351,19 +1408,30 @@ section {
 @media (max-width: 992px) {
   .contact-content-wrapper {
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Revert to center when stacked */
     padding: 1.5rem;
     gap: 2rem;
   }
-  .contact-image-container {
-    flex-basis: auto;
+  .contact-left-column, /* Ensure columns take full width when stacked */
+  .contact-right-column {
     width: 100%;
-    max-width: 350px;
-    margin-bottom: 1rem;
+    flex-basis: auto;
+  }
+  .contact-image-container {
+    /* flex-basis: auto; */ /* Not needed as it's inside left-column */
+    width: 100%;
+    max-width: 350px; /* You might want to control image width on mobile */
+    margin: 0 auto 1rem auto; /* Center image container and add bottom margin */
+    height: auto; /* Let image define height on mobile */
+  }
+  .contact-image {
+    height: auto; /* Let image define its own height on mobile */
+    max-height: 300px; /* Optional: cap image height on mobile */
+    object-fit: contain; /* Switch to contain on mobile to ensure full visibility */
   }
   .contact-form {
     width: 100%;
-    flex-basis: auto;
+    /* flex-basis: auto; */ /* Not needed */
   }
 }
 

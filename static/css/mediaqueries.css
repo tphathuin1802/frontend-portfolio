@@ -1,4 +1,4 @@
-@media screen and (max-width: 1400px) {
+/* @media screen and (max-width: 1400px) {
     #profile {
       height: 83vh;
       margin-bottom: 6rem;
@@ -10,9 +10,9 @@
     #projects {
       height: fit-content;
     }
-  }
-  
-  @media screen and (max-width: 1200px) {
+  } */
+
+/* @media screen and (max-width: 1200px) {
     #desktop-nav {
       display: none;
     }
@@ -24,14 +24,14 @@
       margin-top: 2rem;
     }
     #profile,
-    .section-container {
+    .section-container { 
       display: block;
     }
     .arrow {
       display: none;
     }
     section,
-    .section-container {
+    .section-container { 
       height: fit-content;
     }
     section {
@@ -45,9 +45,9 @@
     .about-containers {
       margin-top: 0;
     }
-  }
-  
-  @media screen and (max-width: 600px) {
+  } */
+
+/* @media screen and (max-width: 600px) {
     #contact,
     footer {
       height: 40vh;
@@ -72,7 +72,7 @@
       margin: 0;
     }
     .contact-info-container p,
-    .nav-links li a {
+    .nav-links li a { 
       font-size: 1rem;
     }
     .experience-sub-title {
@@ -81,7 +81,7 @@
     .logo {
       font-size: 1.5rem;
     }
-    .nav-links {
+    .nav-links { 
       flex-direction: column;
       gap: 0.5rem;
       text-align: center;
@@ -100,5 +100,4 @@
     .text-container {
       text-align: justify;
     }
-  }
-  
+  } */

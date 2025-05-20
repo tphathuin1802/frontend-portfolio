@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Phat Huynh\'s Portfolio - Data Science and Web Development Professional"
+      content="Phat Huynh's Portfolio - Data Science Professional"
     />
     <meta
       name="keywords"
@@ -13,7 +13,7 @@
     />
     <meta name="author" content="Phat Huynh" />
 
-    <title>Phat Huynh | Portfolio</title>
+    <title>Phat Huynh</title>
 
     <!-- Preload Critical Assets -->
     <link rel="preload" href="static/css/style.css" as="style" />
@@ -98,11 +98,6 @@
                 <span>CONTACT</span>
               </a>
             </li>
-            <li>
-              <a href="/blog" class="nav-link">
-                <span>BLOG</span>
-              </a>
-            </li>
           </ul>
           <button id="theme-toggle-nav" aria-label="Toggle dark/light theme">
             <i class="fas fa-moon" aria-hidden="true"></i>
@@ -177,7 +172,7 @@
             <!-- Left: Profile Image -->
             <div class="about-profile-image-wrapper">
               <img
-                src="static/images/about_me_image.png"
+                src="static/images/contact_image.png"
                 alt="About Phat Huynh"
                 class="about-image"
               />
@@ -724,14 +719,28 @@
             <i class="fas fa-envelope-open-text"></i> Contact Me
           </h2>
           <div class="contact-content-wrapper slide-up-element">
-            <div class="contact-image-container">
-              <img
-                src="static/images/contact_image.png"
-                alt="Contact illustration"
-                class="contact-image"
-              />
+            <div class="contact-left-column">
+              <div class="contact-image-container">
+                <img
+                  src="static/images/about_me_image.png"
+                  alt="Contact illustration"
+                  class="contact-image"
+                />
+              </div>
+              <button
+                type="button"
+                class="btn btn-secondary btn-visit-blog"
+                onclick="window.open('/blog', '_blank')"
+              >
+                <i class="fas fa-rss" aria-hidden="true"></i> Visit My Blog
+              </button>
             </div>
-            <form id="contactForm" class="contact-form" method="post">
+
+            <form
+              id="contactForm"
+              class="contact-form contact-right-column"
+              method="post"
+            >
               <!-- CSRF token removed as this is static HTML -->
               <div class="form-group">
                 <label for="name" class="visually-hidden">Name</label>
