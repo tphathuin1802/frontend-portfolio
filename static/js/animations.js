@@ -182,4 +182,35 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  const animatedElements = document.querySelectorAll(
+    ".fade-in-element, .slide-up-element, .scale-in-element, .animated-item"
+  );
+
+  // Intersection Observer for Animations
+  /* // Commenting out the observer logic to let ScrollReveal handle section animations
+  const observer = new IntersectionObserver(
+    (entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          // Optional: Stop observing after animation
+          // observerInstance.unobserve(entry.target);
+        }
+        // Optional: Remove 'visible' class when element leaves viewport for re-animation
+        // else {
+        //   entry.target.classList.remove("visible");
+        // }
+      });
+    },
+    {
+      threshold: 0.1, // Trigger when 10% of the element is visible
+      // rootMargin: '0px 0px -50px 0px' // Adjust rootMargin if needed
+    }
+  );
+
+  animatedElements.forEach((el) => {
+    observer.observe(el);
+  });
+  */
 });
