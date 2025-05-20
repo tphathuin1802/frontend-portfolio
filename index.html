@@ -220,8 +220,8 @@
 
               <div class="about-intro-paragraph">
                 <p>
-                  I\'m a student at UEL-VNU specializing in mathematical
-                  economics with a focus on Data Science. As a fresher, I\'m
+                  I'm a student at UEL-VNU specializing in mathematical
+                  economics with a focus on Data Science. As a fresher, I'm
                   passionate about creating quality products that meet customer
                   needs. I love learning new techniques and technologies that
                   allow me to make that happen.
@@ -241,6 +241,26 @@
       <section id="skills" class="skills-section fade-in-element">
         <div class="section-container">
           <h2 class="section-title"><i class="fas fa-cogs"></i> Skills</h2>
+
+          <!-- Radar Chart (Above Skills Grid) -->
+          <div
+            class="skill-chart-above-grid-container"
+            style="
+              width: 100%;
+              margin-bottom: 2rem;
+              display: flex;
+              justify-content: center;
+            "
+          >
+            <div
+              class="chart-wrapper"
+              style="flex: 0 1 600px; /* Chart max-width, centered */"
+            >
+              <canvas id="skillsRadarChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Skills Grid (Below Chart) -->
           <div class="skills-grid">
             <!-- Programming Languages -->
             <div class="skill-category slide-up-element">
@@ -255,8 +275,8 @@
                   <span>SQL</span>
                 </div>
                 <div class="skill-item">
-                  <i class="fab fa-js"></i>
-                  <span>JavaScript</span>
+                  <i class="fab fa-r-project"></i>
+                  <span>R</span>
                 </div>
                 <div class="skill-item">
                   <i class="fab fa-windows"></i>
@@ -264,29 +284,122 @@
                 </div>
               </div>
             </div>
+            <!-- Frontend -->
+            <div class="skill-category slide-up-element">
+              <h3><i class="fas fa-globe"></i> Frontend</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <i class="fab fa-html5"></i>
+                  <span>HTML</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-css3-alt"></i>
+                  <span>CSS</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-js"></i>
+                  <span>JavaScript</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-react"></i>
+                  <span>Tailwind CSS</span>
+                </div>
+              </div>
+            </div>
+            <!-- Backend -->
+            <div class="skill-category slide-up-element">
+              <h3><i class="fas fa-globe"></i> Backend</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <i class="fab fa-python"></i>
+                  <span>Django</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fas fa-bolt"></i>
+                  <span>FastAPI</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fas fa-plug"></i>
+                  <span>Flask</span>
+                </div>
+              </div>
+            </div>
 
-            <!-- Data Science & Machine Learning -->
+            <!-- Applications -->
+            <div class="skill-category slide-up-element">
+              <h3><i class="fas fa-tools"></i> Applications</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <i class="fab fa-git-alt"></i>
+                  <span>Git</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-git-alt"></i>
+                  <span>Github</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-docker"></i>
+                  <span>Docker</span>
+                </div>
+
+                <div class="skill-item">
+                  <i class="fas fa-chart-pie"></i>
+                  <span>Power BI</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fas fa-cloud"></i>
+                  <span>Jetbrains</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Data Science-->
             <div class="skill-category slide-up-element">
               <h3><i class="fas fa-brain"></i> Data Science</h3>
               <div class="skill-items">
                 <div class="skill-item">
                   <i class="fas fa-table"></i>
-                  <span>Pandas, NumPy</span>
+                  <span>Pandas</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fas fa-table"></i>
+                  <span>Numpy</span>
                 </div>
                 <div class="skill-item">
                   <i class="fas fa-chart-line"></i>
-                  <span>Matplotlib, Seaborn, Plotly</span>
+                  <span>Plotly</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fas fa-chart-line"></i>
+                  <span>Seaborn</span>
                 </div>
                 <div class="skill-item">
                   <i class="fas fa-chart-bar"></i>
-                  <span>Scikit-learn, XGBoost, LightGBM</span>
+                  <span>Matplotlib</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fas fa-chart-bar"></i>
+                  <span>Scikit-learn</span>
                 </div>
               </div>
             </div>
-
+            <!-- Data Engineer -->
+            <div class="skill-category slide-up-element">
+              <h3><i class="fas fa-wind"></i> Data Engineer</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <i class="fas fa-database"></i>
+                  <span>Spark</span>
+                </div>
+                <div class="skill-item">
+                  <i class="fas fa-database"></i>
+                  <span>Hadoop</span>
+                </div>
+              </div>
+            </div>
             <!-- Deep Learning -->
             <div class="skill-category slide-up-element">
-              <h3><i class="fas fa-network-wired"></i> Deep Learning</h3>
+              <h3><i class="fas fa-network-wired"></i> ML & DL</h3>
               <div class="skill-items">
                 <div class="skill-item">
                   <i class="fas fa-fire-alt"></i>
@@ -296,17 +409,7 @@
                   <i class="fas fa-vector-square"></i>
                   <span>TensorFlow</span>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-layer-group"></i>
-                  <span>Keras</span>
-                </div>
-              </div>
-            </div>
 
-            <!-- Computer Vision -->
-            <div class="skill-category slide-up-element">
-              <h3><i class="fas fa-eye"></i> Computer Vision</h3>
-              <div class="skill-items">
                 <div class="skill-item">
                   <i class="fas fa-camera-retro"></i>
                   <span>OpenCV</span>
@@ -314,10 +417,6 @@
                 <div class="skill-item">
                   <i class="fas fa-cube"></i>
                   <span>YOLO</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fas fa-object-group"></i>
-                  <span>Detectron2 / MMDetection</span>
                 </div>
               </div>
             </div>
@@ -338,68 +437,6 @@
                 <div class="skill-item">
                   <i class="fas fa-database"></i>
                   <span>MongoDB</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Full Stack -->
-            <div class="skill-category slide-up-element">
-              <h3><i class="fas fa-globe"></i> Full Stack</h3>
-              <div class="skill-items">
-                <div class="skill-item">
-                  <i class="fab fa-python"></i>
-                  <span>Django</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fas fa-bolt"></i>
-                  <span>FastAPI</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fas fa-plug"></i>
-                  <span>Flask</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fas fa-code"></i>
-                  <span>HTMl & CSS</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Data Engineers -->
-            <div class="skill-category slide-up-element">
-              <h3><i class="fas fa-wind"></i> Data Engineers</h3>
-              <div class="skill-items">
-                <div class="skill-item">
-                  <i class="fas fa-database"></i>
-                  <span>Spark</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fas fa-database"></i>
-                  <span>Hadoop</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tools & Others -->
-            <div class="skill-category slide-up-element">
-              <h3><i class="fas fa-tools"></i> Tools & Others</h3>
-              <div class="skill-items">
-                <div class="skill-item">
-                  <i class="fab fa-git-alt"></i>
-                  <span>Git & GitHub</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fab fa-docker"></i>
-                  <span>Docker</span>
-                </div>
-
-                <div class="skill-item">
-                  <i class="fas fa-chart-pie"></i>
-                  <span>Tableau / Power BI</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fas fa-cloud"></i>
-                  <span>Google Colab / Kaggle</span>
                 </div>
               </div>
             </div>
@@ -911,7 +948,118 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+      // Skills Radar Chart
+      const skillsRadarCtx = document.getElementById("skillsRadarChart");
+      if (skillsRadarCtx) {
+        const skillCategories = [
+          "Programming",
+          "Frontend",
+          "Backend",
+          "Applications",
+          "Data Science",
+          "Data Engineer",
+          "ML & DL",
+          "Databases",
+        ];
+        const proficiencyData = [4, 3, 3, 3, 5, 2, 4, 4];
+
+        // Theme-dependent colors
+        const isDarkMode = document.body.classList.contains("dark-mode");
+        const chartLineColor = isDarkMode
+          ? "rgb(255, 255, 255)"
+          : "rgb(0, 0, 0)";
+        const chartFillColor = isDarkMode
+          ? "rgba(255, 255, 255, 0.1)"
+          : "rgba(0, 0, 0, 0.1)";
+        const chartPointBorderColor = isDarkMode ? "rgb(40, 40, 40)" : "#fff";
+        const chartPointHoverBackgroundColor = isDarkMode
+          ? "rgb(40, 40, 40)"
+          : "#fff";
+        const gridAndAngleLineColor = isDarkMode
+          ? "rgba(255, 255, 255, 0.4)"
+          : "rgba(0, 0, 0, 0.3)"; // Enhanced contrast
+
+        new Chart(skillsRadarCtx, {
+          type: "radar",
+          data: {
+            labels: skillCategories,
+            datasets: [
+              {
+                label: "Proficiency Level",
+                data: proficiencyData,
+                fill: true,
+                backgroundColor: chartFillColor,
+                borderColor: chartLineColor,
+                borderWidth: 2, // Increased border width for the dataset line
+                pointBackgroundColor: chartLineColor,
+                pointBorderColor: chartPointBorderColor,
+                pointHoverBackgroundColor: chartPointHoverBackgroundColor,
+                pointHoverBorderColor: chartLineColor,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+              r: {
+                angleLines: {
+                  display: true,
+                  color: gridAndAngleLineColor, // Theme-aware angle lines with better contrast
+                },
+                grid: {
+                  color: gridAndAngleLineColor, // Theme-aware grid lines with better contrast
+                },
+                suggestedMin: 0,
+                suggestedMax: 5,
+                pointLabels: {
+                  font: {
+                    size: 13,
+                    weight: "bold", // Make point labels bold
+                  },
+                  color: chartLineColor, // Theme-aware point label color
+                },
+                ticks: {
+                  stepSize: 1,
+                  backdropColor: "rgba(0,0,0,0)",
+                  color: chartLineColor, // Theme-aware tick label color
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                display: false,
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    let label = context.dataset.label || "";
+                    if (label) {
+                      label += ": ";
+                    }
+                    if (context.parsed.r !== null) {
+                      const proficiencyLabelsRadar = {
+                        1: "Beginner",
+                        2: "Intermediate",
+                        3: "Proficient",
+                        4: "Advanced",
+                        5: "Expert",
+                      };
+                      label +=
+                        proficiencyLabelsRadar[context.parsed.r] ||
+                        context.parsed.r;
+                    }
+                    return label;
+                  },
+                },
+              },
+            },
+          },
+        });
+      }
+
       // Update copyright year
       document.getElementById("current-year").textContent =
         new Date().getFullYear();
