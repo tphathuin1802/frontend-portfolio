@@ -787,6 +787,20 @@ section {
   padding: 5rem 0;
 }
 
+/* New styles for the container of the chart above the skills grid */
+.skill-chart-above-grid-container {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles for the chart wrapper specifically within the above container */
+.skill-chart-above-grid-container .chart-wrapper {
+  flex: 0 1 600px; /* Chart max-width, centered */
+  /* Styles from existing .chart-wrapper will also apply if not overridden */
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
