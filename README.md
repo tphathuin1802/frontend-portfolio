@@ -14,16 +14,13 @@ Frontend-Portfolio is a personal portfolio website showcasing my skills, project
 ## Technologies Used
 
 - **Frontend**:
-  - React.js
   - JavaScript (ES6+)
   - HTML5
-  - CSS3 (with Styled Components or Tailwind CSS, if applicable)
+  - CSS3 (with Styled Components and Tailwind CSS)
 - **Tools & Libraries**:
-  - Vite / Create React App (depending on your setup)
-  - React Router (for navigation, if used)
-  - Framer Motion (for animations, if used)
+  RevealScrolled.js
 - **Deployment**:
-  - GitHub Pages / Vercel / Netlify (adjust based on your deployment platform)
+  - Vercel
 - **Version Control**:
   - Git & GitHub
 
