@@ -369,7 +369,6 @@ h4 {
   height: 360px;
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid var(--text-color);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   transition: transform var(--transition-normal);
 }
@@ -561,6 +560,24 @@ section {
   animation-delay: 0.6s;
 }
 
+/* Typing Effect Styles */
+.typing-effect {
+  display: inline-block;
+}
+
+.typing-cursor {
+  display: inline-block;
+  color: var(--text-color);
+  margin-left: 2px;
+  font-weight: 100;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 .highlight {
   font-weight: 700;
 }
@@ -588,14 +605,26 @@ section {
 
 /* Specific style for Download CV button */
 .btn-cv {
-  background-color: var(--bg-color) !important;
-  color: var(--text-color) !important;
-  border: 1px solid var(--text-color) !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #000000 !important;
 }
 
 .btn-cv:hover {
-  background-color: var(--text-color) !important;
-  color: var(--bg-color) !important;
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+/* Dark mode CV button styling */
+.dark-mode .btn-cv {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #ffffff !important;
+}
+
+.dark-mode .btn-cv:hover {
+  background-color: #e0e0e0 !important;
+  color: #000000 !important;
 }
 
 /* Hero Social Links Styling - Updated */
@@ -613,12 +642,12 @@ section {
   background-color: transparent;
   color: var(--text-color) !important;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   transition: color 0.3s ease, transform 0.3s ease;
   text-decoration: none;
 }
@@ -2378,6 +2407,103 @@ button.btn-visit-blog:hover {
   border: 1px solid var(--item-border-color, #e0e0e0);
 }
 
+.certificate-link {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color, #e0e0e0);
+}
+
+.certificate-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.certificate-link a:hover {
+  color: #004499;
+  text-decoration: underline;
+}
+
+.certificate-link a i {
+  font-size: 0.8rem;
+}
+
+/* Pending section styles */
+.references-pending {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.pending-card {
+  background-color: var(--card-bg-color, var(--bg-color));
+  border-radius: var(--border-radius-md, 8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 2px dashed var(--border-color, #e0e0e0);
+  padding: 2rem;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pending-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.pending-icon {
+  margin-bottom: 1rem;
+}
+
+.pending-icon i {
+  font-size: 3rem;
+  color: #ffa500;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.pending-content h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.pending-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--item-text-color, #666);
+  margin-bottom: 1.5rem;
+}
+
+.pending-status {
+  display: flex;
+  justify-content: center;
+}
+
+.status-badge {
+  background-color: #ffa500;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-sm, 4px);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 /* Responsive adjustments for references section */
 @media (max-width: 768px) {
   .references-grid {
@@ -2426,6 +2552,23 @@ button.btn-visit-blog:hover {
   .reference-skills .skill-tag {
     font-size: 0.75rem;
     padding: 0.25rem 0.5rem;
+  }
+  
+  .pending-card {
+    margin: 0 1rem;
+    padding: 1.5rem;
+  }
+  
+  .pending-icon i {
+    font-size: 2.5rem;
+  }
+  
+  .pending-content h4 {
+    font-size: 1.3rem;
+  }
+  
+  .pending-text {
+    font-size: 0.9rem;
   }
 }
 

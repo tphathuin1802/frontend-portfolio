@@ -119,10 +119,10 @@
             <p class="hero-pretitle animated-item">Hello, I'm</p>
             <h1 class="hero-title animated-item">PHAT HUYNH</h1>
             <h2
-              class="hero-subtitle animated-item"
+              class="hero-subtitle animated-item typing-effect"
               style="margin-top: 1.5rem; margin-bottom: 1.5rem"
             >
-              Data Science fresher
+              <span id="typing-text"></span><span class="typing-cursor">|</span>
             </h2>
             <div class="cta-buttons animated-item">
               <button
@@ -267,7 +267,6 @@
                   <div class="skill-info">
                     <h4>Python</h4>
                     <span class="skill-level intermediate">Intermediate</span>
-                    <p class="skill-experience">• 2 years exp</p>
                   </div>
                 </div>
                 <div class="skill-card">
@@ -300,7 +299,7 @@
                   </div>
                   <div class="skill-info">
                     <h4>C#</h4>
-                    <span class="skill-level intermediate">Intermediate</span>
+                    <span class="skill-level beginner">Beginner</span>
                     <p class="skill-experience">• 1 year exp</p>
                   </div>
                 </div>
@@ -324,7 +323,7 @@
                   </div>
                   <div class="skill-info">
                     <h4>FastAPI</h4>
-                    <span class="skill-level intermediate">Intermediate</span>
+                    <span class="skill-level beginner">Beginner</span>
                     <p class="skill-experience">• 1 year exp</p>
                   </div>
                 </div>
@@ -337,7 +336,7 @@
                   </div>
                   <div class="skill-info">
                     <h4>Flask</h4>
-                    <span class="skill-level intermediate">Intermediate</span>
+                    <span class="skill-level beginner">Beginner</span>
                     <p class="skill-experience">• 1 year exp</p>
                   </div>
                 </div>
@@ -365,7 +364,6 @@
                   <div class="skill-info">
                     <h4>CSS</h4>
                     <span class="skill-level beginner">Beginner</span>
-                    <p class="skill-experience">• 2 years exp</p>
                   </div>
                 </div>
                 <div class="skill-card">
@@ -375,16 +373,18 @@
                   <div class="skill-info">
                     <h4>JavaScript</h4>
                     <span class="skill-level beginner">Beginner</span>
-                    <p class="skill-experience">• 1.5 years exp</p>
                   </div>
                 </div>
+
                 <div class="skill-card">
                   <div class="skill-icon">
-                    <i class="fas fa-wind" style="color: #06b6d4"></i>
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg"
+                    />
                   </div>
                   <div class="skill-info">
-                    <h4>Tailwind CSS</h4>
-                    <span class="skill-level beginner">Beginner</span>
+                    <h4>Streamlit</h4>
+                    <span class="skill-level expert">Expert</span>
                     <p class="skill-experience">• 1 year exp</p>
                   </div>
                 </div>
@@ -592,7 +592,6 @@
                   <div class="skill-info">
                     <h4>Git</h4>
                     <span class="skill-level expert">Expert</span>
-                    <p class="skill-experience">• 2 years exp</p>
                   </div>
                 </div>
                 <div class="skill-card">
@@ -602,7 +601,6 @@
                   <div class="skill-info">
                     <h4>GitHub</h4>
                     <span class="skill-level expert">Expert</span>
-                    <p class="skill-experience">• 2 years exp</p>
                   </div>
                 </div>
                 <div class="skill-card">
@@ -612,7 +610,6 @@
                   <div class="skill-info">
                     <h4>Docker</h4>
                     <span class="skill-level intermediate">Intermediate</span>
-                    <p class="skill-experience">• 1 year exp</p>
                   </div>
                 </div>
                 <div class="skill-card">
@@ -624,7 +621,41 @@
                   <div class="skill-info">
                     <h4>JetBrains</h4>
                     <span class="skill-level expert">Expert</span>
-                    <p class="skill-experience">• 2 years exp</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AI & More -->
+            <div class="skill-category">
+              <h3><i class="fas fa-brain"></i> AI & More</h3>
+              <div class="skill-items">
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img src="static/images/logo_huggingface.png" />
+                  </div>
+                  <div class="skill-info">
+                    <h4>Hugging Face</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                  </div>
+                </div>
+
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="fas fa-robot" style="color: #ff6b6b"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>LLM</h4>
+                    <span class="skill-level beginner">Beginner</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="fas fa-comments" style="color: #4ecdc4"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>NLP</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
                   </div>
                 </div>
               </div>
@@ -1228,22 +1259,35 @@
                 <div class="reference-card">
                   <div class="reference-image">
                     <img
-                      src="static/images/cert_placeholder.png"
-                      alt="Certificate"
+                      src="static/images/cert_google_data_analytic.png"
+                      alt="Google Data Analytics Professional Certificate"
                     />
                   </div>
                   <div class="reference-content">
-                    <h4>Data Science Certificate</h4>
+                    <h4>Google Data Analytics Professional Certificate</h4>
                     <p class="reference-issuer">Coursera - Google</p>
                     <p class="reference-date">2024</p>
                     <p class="reference-description">
-                      Comprehensive data science program covering Python, SQL,
-                      and machine learning fundamentals.
+                      Comprehensive 6-month program covering data analysis
+                      fundamentals, data cleaning, visualization, and
+                      statistical analysis using R, SQL, and Tableau.
                     </p>
                     <div class="reference-skills">
-                      <span class="skill-tag">Python</span>
+                      <span class="skill-tag">Data Analysis</span>
+                      <span class="skill-tag">R Programming</span>
                       <span class="skill-tag">SQL</span>
-                      <span class="skill-tag">Machine Learning</span>
+                      <span class="skill-tag">Tableau</span>
+                      <span class="skill-tag">Data Visualization</span>
+                    </div>
+                    <div class="certificate-link">
+                      <a
+                        href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/UF2VBAANH1S1"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <i class="fas fa-external-link-alt"></i> View
+                        Certificate
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1251,21 +1295,71 @@
                 <div class="reference-card">
                   <div class="reference-image">
                     <img
-                      src="static/images/cert_placeholder.png"
-                      alt="Certificate"
+                      src="static/images/cert_sql_advanced.png"
+                      alt="HackerRank SQL Advanced Certificate"
                     />
                   </div>
                   <div class="reference-content">
-                    <h4>Python Programming Certificate</h4>
-                    <p class="reference-issuer">edX - MIT</p>
-                    <p class="reference-date">2023</p>
+                    <h4>SQL (Advanced) Certificate</h4>
+                    <p class="reference-issuer">HackerRank</p>
+                    <p class="reference-date">2024</p>
                     <p class="reference-description">
-                      Advanced Python programming concepts and data structures.
+                      Advanced SQL certification covering query optimization,
+                      data modeling, indexing, window functions, and pivots in
+                      SQL.
+                    </p>
+                    <div class="reference-skills">
+                      <span class="skill-tag">Advanced SQL</span>
+                      <span class="skill-tag">Query Optimization</span>
+                      <span class="skill-tag">Data Modeling</span>
+                      <span class="skill-tag">Window Functions</span>
+                      <span class="skill-tag">Database Indexing</span>
+                    </div>
+                    <div class="certificate-link">
+                      <a
+                        href="https://www.hackerrank.com/certificates/b3899cd1162d"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <i class="fas fa-external-link-alt"></i> View
+                        Certificate
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="reference-card">
+                  <div class="reference-image">
+                    <img
+                      src="static/images/cert_django.png"
+                      alt="Udemy Python Certificate"
+                    />
+                  </div>
+                  <div class="reference-content">
+                    <h4>Complete Python Developer Course</h4>
+                    <p class="reference-issuer">Udemy</p>
+                    <p class="reference-date">2024</p>
+                    <p class="reference-description">
+                      Comprehensive Python programming course covering
+                      fundamentals, web development, data analysis, and
+                      automation.
                     </p>
                     <div class="reference-skills">
                       <span class="skill-tag">Python</span>
-                      <span class="skill-tag">Data Structures</span>
-                      <span class="skill-tag">Algorithms</span>
+                      <span class="skill-tag">Web Development</span>
+                      <span class="skill-tag">Data Analysis</span>
+                      <span class="skill-tag">Automation</span>
+                      <span class="skill-tag">APIs</span>
+                    </div>
+                    <div class="certificate-link">
+                      <a
+                        href="https://www.udemy.com/certificate/UC-e82654a3-c071-462c-ab6b-15f0572fb5d0/"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <i class="fas fa-external-link-alt"></i> View
+                        Certificate
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1275,49 +1369,19 @@
             <!-- Activities Section -->
             <div class="references-category">
               <h3><i class="fas fa-users"></i> Activities & Competitions</h3>
-              <div class="references-grid">
-                <div class="reference-card">
-                  <div class="reference-image">
-                    <img
-                      src="static/images/activity_placeholder.png"
-                      alt="Activity"
-                    />
+              <div class="references-pending">
+                <div class="pending-card">
+                  <div class="pending-icon">
+                    <i class="fas fa-clock"></i>
                   </div>
-                  <div class="reference-content">
-                    <h4>Data Science Hackathon</h4>
-                    <p class="reference-issuer">VNU-HCM</p>
-                    <p class="reference-date">2024</p>
-                    <p class="reference-description">
-                      Participated in university-wide data science competition,
-                      achieved top 10 position.
+                  <div class="pending-content">
+                    <h4>Coming Soon</h4>
+                    <p class="pending-text">
+                      Activities and competitions section is currently being
+                      updated. Please check back later for exciting updates!
                     </p>
-                    <div class="reference-skills">
-                      <span class="skill-tag">Team Work</span>
-                      <span class="skill-tag">Problem Solving</span>
-                      <span class="skill-tag">Data Analysis</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="reference-card">
-                  <div class="reference-image">
-                    <img
-                      src="static/images/activity_placeholder.png"
-                      alt="Activity"
-                    />
-                  </div>
-                  <div class="reference-content">
-                    <h4>Student Research Conference</h4>
-                    <p class="reference-issuer">UEL Faculty</p>
-                    <p class="reference-date">2023</p>
-                    <p class="reference-description">
-                      Presented research on economic data analysis using machine
-                      learning techniques.
-                    </p>
-                    <div class="reference-skills">
-                      <span class="skill-tag">Research</span>
-                      <span class="skill-tag">Presentation</span>
-                      <span class="skill-tag">Academic Writing</span>
+                    <div class="pending-status">
+                      <span class="status-badge">Pending</span>
                     </div>
                   </div>
                 </div>
