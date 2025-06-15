@@ -59,6 +59,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
+    <!-- Devicons for technology icons -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
   </head>
 
   <body>
@@ -89,6 +95,9 @@
             </li>
             <li>
               <a href="#experience" class="nav-link"> EXPERIENCES </a>
+            </li>
+            <li>
+              <a href="#references" class="nav-link"> REFERENCES </a>
             </li>
             <li>
               <a href="#contact" class="nav-link"> CONTACT </a>
@@ -203,13 +212,17 @@
                   <h4 class="info-card-title">Education</h4>
                   <p class="info-card-text">B.Sc. Mathematical Economics</p>
                   <p class="info-card-text">
+                    <img
+                      src="static/images/logo_uel.png"
+                      style="width: 25px; height: 25px"
+                    />
                     <a
                       href="https://uel.vnu.edu.vn/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Vietnam National University - HCMC University of Economics
-                      and Law (UEL)
+                      Vietnam National University - HCMC <br />
+                      University of Economics and Law
                     </a>
                   </p>
                 </div>
@@ -239,133 +252,380 @@
         <div class="section-container">
           <h2 class="section-title"><i class="fas fa-cogs"></i> Skills</h2>
 
-          <!-- Radar Chart (Above Skills Grid) -->
-          <div class="skill-chart-above-grid-container slide-up-element">
-            <div class="chart-wrapper">
-              <canvas id="skillsRadarChart"></canvas>
-            </div>
-          </div>
-
-          <!-- Skills Grid (Below Chart) -->
+          <!-- Skills Grid -->
           <div class="skills-grid slide-up-element">
-            <!-- 🧑‍💻 Dev -->
+            <!-- Backend -->
             <div class="skill-category">
-              <h3><i class="fas fa-laptop-code"></i> 🧑‍💻 Dev</h3>
+              <h3><i class="fas fa-server"></i> Backend</h3>
               <div class="skill-items">
-                <div class="skill-item">
-                  <i class="fab fa-python"></i><span>Python</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>Python</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 2 years exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-database"></i><span>SQL</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-azuresqldatabase-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>SQL</h4>
+                    <span class="skill-level expert">Expert</span>
+                    <p class="skill-experience">• 2 years exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fab fa-r-project"></i><span>R</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>R</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1 year exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-file-code"></i><span>C#</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>C#</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1 year exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fab fa-html5"></i><span>HTML</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>Django</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1.5 years exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fab fa-css3-alt"></i><span>CSS</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>FastAPI</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1 year exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fab fa-js-square"></i><span>JavaScript</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fab fa-tailwind-css"></i><span>Tailwind CSS</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fab fa-django"></i><span>Django</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fas fa-bolt"></i><span>FastAPI</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fas fa-flask"></i><span>Flask</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fab fa-git-alt"></i><span>Git</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fab fa-github"></i><span>GitHub</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fab fa-docker"></i><span>Docker</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fas fa-tools"></i><span>JetBrains</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i
+                      class="devicon-flask-original colored"
+                      style="color: #000000"
+                    ></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>Flask</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1 year exp</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- 📈 Data -->
+            <!-- Frontend -->
             <div class="skill-category">
-              <h3><i class="fas fa-chart-bar"></i> 📈 Data</h3>
+              <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
               <div class="skill-items">
-                <div class="skill-item">
-                  <i class="fas fa-table-cells"></i><span>Pandas</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-html5-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>HTML</h4>
+                    <span class="skill-level expert">Expert</span>
+                    <p class="skill-experience">• 2 years exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-calculator"></i><span>Numpy</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-css3-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>CSS</h4>
+                    <span class="skill-level beginner">Beginner</span>
+                    <p class="skill-experience">• 2 years exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-chart-column"></i><span>Matplotlib</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="fab fa-js-square" style="color: #f7df1e"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>JavaScript</h4>
+                    <span class="skill-level beginner">Beginner</span>
+                    <p class="skill-experience">• 1.5 years exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-chart-line"></i><span>Seaborn</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fas fa-chart-pie"></i><span>Plotly</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fas fa-gears"></i><span>Scikit-learn</span>
-                </div>
-                <div class="skill-item">
-                  <i class="fas fa-magnifying-glass-chart"></i
-                  ><span>Power BI</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="fas fa-wind" style="color: #06b6d4"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>Tailwind CSS</h4>
+                    <span class="skill-level beginner">Beginner</span>
+                    <p class="skill-experience">• 1 year exp</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- 🤖 AI -->
+            <!-- Data Skills -->
             <div class="skill-category">
-              <h3><i class="fas fa-brain"></i> 🤖 AI</h3>
+              <h3><i class="fas fa-chart-bar"></i> Data Skills</h3>
               <div class="skill-items">
-                <div class="skill-item">
-                  <i class="fas fa-fire"></i><span>PyTorch</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>Pandas</h4>
+                    <span class="skill-level expert">Expert</span>
+                    <p class="skill-experience">• 3 years exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-robot"></i><span>TensorFlow</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>NumPy</h4>
+                    <span class="skill-level expert">Expert</span>
+                    <p class="skill-experience">• 3 years exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-camera-retro"></i><span>OpenCV</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>Matplotlib</h4>
+                    <span class="skill-level expert">Expert</span>
+                    <p class="skill-experience">• 2.5 years exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-bullseye"></i><span>YOLO</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img src="static/images/logo_seaborn.png" />
+                  </div>
+                  <div class="skill-info">
+                    <h4>Seaborn</h4>
+                    <span class="skill-level expert">Expert</span>
+                    <p class="skill-experience">• 2 years exp</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/plotly/plotly-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>Plotly</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1.5 years exp</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img src="static/images/logo_powerBI.png" />
+                  </div>
+                  <div class="skill-info">
+                    <h4>Power BI</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1 year exp</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>Scikit-learn</h4>
+
+                    <span class="skill-level expert">Expert</span>
+                    <p class="skill-experience">• 2 years exp</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>PyTorch</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1 year exp</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>TensorFlow</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1 year exp</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>OpenCV</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1 year exp</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- 🗄️ DB -->
+            <!-- Database -->
             <div class="skill-category">
-              <h3><i class="fas fa-server"></i> 🗄️ DB</h3>
+              <h3><i class="fas fa-server"></i> Database</h3>
               <div class="skill-items">
-                <div class="skill-item">
-                  <i class="fas fa-database"></i><span>MySQL</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>MySQL</h4>
+                    <span class="skill-level expert">Expert</span>
+                    <p class="skill-experience">• 2 years exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-database"></i><span>MSSQL Server</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i
+                      class="devicon-microsoftsqlserver-plain"
+                      style="color: #cc2927"
+                    ></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>MSSQL Server</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1.5 years exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-leaf"></i><span>MongoDB</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-mongodb-plain" style="color: #47a248"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>MongoDB</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1 year exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-layer-group"></i><span>Spark</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>Spark</h4>
+                    <span class="skill-level beginner">Beginner</span>
+                    <p class="skill-experience">• 6 months exp</p>
+                  </div>
                 </div>
-                <div class="skill-item">
-                  <i class="fas fa-archive"></i><span>Hadoop</span>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="fas fa-archive" style="color: #66ccff"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>Hadoop</h4>
+                    <span class="skill-level beginner">Beginner</span>
+                    <p class="skill-experience">• 6 months exp</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tools & Applications -->
+            <div class="skill-category">
+              <h3><i class="fas fa-tools"></i> Tools & Applications</h3>
+              <div class="skill-items">
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>Git</h4>
+                    <span class="skill-level expert">Expert</span>
+                    <p class="skill-experience">• 2 years exp</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="fab fa-github" style="color: #181717"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>GitHub</h4>
+                    <span class="skill-level expert">Expert</span>
+                    <p class="skill-experience">• 2 years exp</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="fab fa-docker" style="color: #2496ed"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h4>Docker</h4>
+                    <span class="skill-level intermediate">Intermediate</span>
+                    <p class="skill-experience">• 1 year exp</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jetbrains/jetbrains-original.svg"
+                    />
+                  </div>
+                  <div class="skill-info">
+                    <h4>JetBrains</h4>
+                    <span class="skill-level expert">Expert</span>
+                    <p class="skill-experience">• 2 years exp</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -400,15 +660,39 @@
                   backtesting stock trading strategies using historical data.
                 </p>
                 <div class="project-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">Pandas</span>
-                  <span class="tag">Scikit-learn</span>
-                  <span class="tag">Matplotlib</span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                      alt="Python"
+                    />
+                    Python
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
+                      alt="Pandas"
+                    />
+                    Pandas
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"
+                      alt="Scikit-learn"
+                    />
+                    Scikit-learn
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg"
+                      alt="Matplotlib"
+                    />
+                    Matplotlib
+                  </span>
                 </div>
                 <div class="project-links">
                   <a
                     href="https://github.com/tphathuin1802/stock-strategy-backtesting"
-                    class="btn btn-dark project-btn"
+                    class="btn btn-dark project-btn btn-github"
                     target="_blank"
                     rel="noopener"
                   >
@@ -443,15 +727,39 @@
                   Plotly. Served as the coding leader for the project group.
                 </p>
                 <div class="project-tags">
-                  <span class="tag">Streamlit</span>
-                  <span class="tag">Plotly</span>
-                  <span class="tag">Python</span>
-                  <span class="tag">Pandas</span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg"
+                      alt="Streamlit"
+                    />
+                    Streamlit
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/plotly/plotly-original.svg"
+                      alt="Plotly"
+                    />
+                    Plotly
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                      alt="Python"
+                    />
+                    Python
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
+                      alt="Pandas"
+                    />
+                    Pandas
+                  </span>
                 </div>
                 <div class="project-links">
                   <a
                     href="https://github.com/tphathuin1802/dataviz-wallmart"
-                    class="btn btn-dark project-btn"
+                    class="btn btn-dark project-btn btn-github"
                     target="_blank"
                     rel="noopener"
                   >
@@ -486,13 +794,37 @@
                   programmability with MSSQL Server.
                 </p>
                 <div class="project-tags">
-                  <span class="tag">MSSQL Server</span>
-                  <span class="tag">PyQt6</span>
-                  <span class="tag">Python</span>
-                  <span class="tag">Pandas</span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                      alt="MSSQL Server"
+                    />
+                    MSSQL Server
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/qt/qt-original.svg"
+                      alt="PyQt6"
+                    />
+                    PyQt6
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                      alt="Python"
+                    />
+                    Python
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
+                      alt="Pandas"
+                    />
+                    Pandas
+                  </span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="btn btn-dark project-btn"
+                  <a href="#" class="btn btn-dark project-btn btn-github"
                     ><i class="fab fa-github"></i> GitHub</a
                   >
                   <a href="#" class="btn btn-dark project-btn"
@@ -518,15 +850,39 @@
                   collaborative filtering.
                 </p>
                 <div class="project-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">Scikit-learn</span>
-                  <span class="tag">Pandas</span>
-                  <span class="tag">Streamlit</span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                      alt="Python"
+                    />
+                    Python
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"
+                      alt="Scikit-learn"
+                    />
+                    Scikit-learn
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
+                      alt="Pandas"
+                    />
+                    Pandas
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg"
+                      alt="Streamlit"
+                    />
+                    Streamlit
+                  </span>
                 </div>
                 <div class="project-links">
                   <a
                     href="https://github.com/tphathuin1802/movie-recommendation"
-                    class="btn btn-dark project-btn"
+                    class="btn btn-dark project-btn btn-github"
                     ><i class="fab fa-github"></i> GitHub</a
                   >
                   <a
@@ -555,15 +911,39 @@
                   filtering.
                 </p>
                 <div class="project-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">Pandas</span>
-                  <span class="tag">Scikit-learn</span>
-                  <span class="tag">Matplotlib</span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                      alt="Python"
+                    />
+                    Python
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
+                      alt="Pandas"
+                    />
+                    Pandas
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"
+                      alt="Scikit-learn"
+                    />
+                    Scikit-learn
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg"
+                      alt="Matplotlib"
+                    />
+                    Matplotlib
+                  </span>
                 </div>
                 <div class="project-links">
                   <a
                     href="https://github.com/tphathuin1802/fake-news-detection"
-                    class="btn btn-dark project-btn"
+                    class="btn btn-dark project-btn btn-github"
                     ><i class="fab fa-github"></i> GitHub</a
                   >
                   <a
@@ -591,13 +971,28 @@
                   Hugging Face.
                 </p>
                 <div class="project-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">Hugging Face</span>
-                  <span class="tag">BERT</span>
-                  <span class="tag">Transformers</span>
+                  <span class="tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                      alt="Python"
+                    />
+                    Python
+                  </span>
+                  <span class="tag">
+                    <img
+                      src="static/images/logo_huggingface.png"
+                      alt="Hugging Face"
+                    />
+                    Hugging Face
+                  </span>
+                  <span class="tag">
+                    <img src="static/images/logo_bert.png" alt="BERT" />
+                    BERT
+                  </span>
+                  <span class="tag"> Transformers </span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="btn btn-dark project-btn"
+                  <a href="#" class="btn btn-dark project-btn btn-github"
                     ><i class="fab fa-github"></i> GitHub</a
                   >
                   <a href="#" class="btn btn-dark project-btn"
@@ -621,51 +1016,312 @@
             <i class="fas fa-briefcase"></i> Experience
           </h2>
           <div class="experience-content slide-up-element">
-            <p>
-              Details about my professional experience: internships, part-time
-              jobs, or significant projects.
-            </p>
             <div class="experience-item">
-              <h4>Partime collaborator | IELTS Mentor</h4>
-              <p class="experience-duration">Aug 2023 - Dec 2023</p>
-              <ul>
-                <li>Communication skills</li>
-                <li>Customer approachable</li>
-                <li>Personal brand</li>
-              </ul>
+              <div class="experience-header">
+                <div class="experience-company-logo">
+                  <img src="static/images/logo_ielts.jpg" alt="IELTS Mentor" />
+                </div>
+                <div class="experience-details">
+                  <h4>Part-time Collaborator</h4>
+                  <p class="experience-company">IELTS Mentor</p>
+                  <p class="experience-duration">August 2023 — December 2023</p>
+                </div>
+              </div>
+              <p class="experience-description">
+                Provided English language tutoring and mentoring services to
+                students preparing for IELTS examinations.
+              </p>
+
+              <div class="experience-achievements">
+                <h5><i class="fas fa-trophy"></i> Key Achievements</h5>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Enhanced communication
+                    and interpersonal skills
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Developed
+                    customer-focused approach and service mindset
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Built personal brand and
+                    professional reputation
+                  </li>
+                </ul>
+              </div>
             </div>
+
             <div class="experience-item">
-              <h4>Member | Union of Mathematics Economic Faculty</h4>
-              <p class="experience-duration">Dec 2023 - Aug 2024</p>
-              <ul>
-                <li>
-                  Organize events, workshops, and competitions to enhance
-                  students' skills and knowledge.
-                </li>
-                <li>
-                  Media team: take photos, videos, and edit them for the union
-                  events.
-                </li>
-                <li>
-                  Adobe applications: Photoshop, Premiere Pro, After Effects.
-                </li>
-              </ul>
+              <div class="experience-header">
+                <div class="experience-company-logo">
+                  <img src="static/images/logo_uel.png" alt="UEL Union" />
+                </div>
+                <div class="experience-details">
+                  <h4>Union Member</h4>
+                  <p class="experience-company">
+                    Union of Mathematics Economic Faculty
+                  </p>
+                  <p class="experience-duration">December 2023 — August 2024</p>
+                </div>
+              </div>
+              <p class="experience-description">
+                Active member of the faculty union, contributing to event
+                organization and media production.
+              </p>
+
+              <div class="experience-achievements">
+                <h5><i class="fas fa-trophy"></i> Key Achievements</h5>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Organized 15+ events,
+                    workshops, and competitions to enhance students' skills
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Led media team for
+                    photography, videography, and content editing
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Increased student
+                    engagement by 40% through innovative event formats
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Collaborated with 5+
+                    departments to coordinate cross-faculty activities
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Managed social media
+                    presence with 2000+ followers growth
+                  </li>
+                </ul>
+              </div>
+
+              <div class="experience-technologies">
+                <h5><i class="fas fa-code"></i> Technologies & Skills</h5>
+                <div class="tech-tags">
+                  <span class="tech-tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-plain.svg"
+                      alt="Photoshop"
+                    />
+                    Photoshop
+                  </span>
+                  <span class="tech-tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg"
+                      alt="Premiere Pro"
+                    />
+                    Premiere Pro
+                  </span>
+                  <span class="tech-tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg"
+                      alt="After Effects"
+                    />
+                    After Effects
+                  </span>
+                  <span class="tech-tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg"
+                    />
+
+                    Canva
+                  </span>
+                </div>
+              </div>
             </div>
-            <!-- Add more experience items as needed -->
+
             <div class="experience-item">
-              <h4>Frelancer</h4>
-              <p class="experience-duration">Sep 2024 - Present</p>
-              <ul>
-                <li>
-                  Data analysis, data visualization, and data engineering for
-                  clients
-                </li>
-                <li>Salary: 5$/ Project, mostly small projects</li>
-                <li>
-                  Tools: Python, Pandas, Matplotlib, Seaborn, Plotly, Streamlit,
-                  SQL, Excel, Power BI, Tableau.
-                </li>
-              </ul>
+              <div class="experience-header">
+                <div class="experience-company-logo">
+                  <img src="static/images/logo_freelancer.png" alt="Upwork" />
+                </div>
+                <div class="experience-details">
+                  <h4>Frelancer Data Analyst</h4>
+                  <p class="experience-company">Upwork</p>
+                  <p class="experience-duration">September 2024 — Present</p>
+                </div>
+              </div>
+              <p class="experience-description">
+                Data analysis, data visualization, and data engineering for
+                clients.
+              </p>
+
+              <div class="experience-achievements">
+                <h5><i class="fas fa-trophy"></i> Key Achievements</h5>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Completed 10+ projects
+                    focusing on scalable solutions
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Consistently praised for
+                    skillfulness, quick learning, and strong communication.
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Earned repeated
+                    engagements through reliability and expertise
+                  </li>
+                </ul>
+              </div>
+
+              <div class="experience-technologies">
+                <h5><i class="fas fa-code"></i> Technologies & Skills</h5>
+                <div class="tech-tags">
+                  <span class="tech-tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                      alt="Python"
+                    />
+                    Python
+                  </span>
+                  <span class="tech-tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
+                      alt="Pandas"
+                    />
+                    Pandas
+                  </span>
+                  <span class="tech-tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg"
+                      alt="Matplotlib"
+                    />
+                    Matplotlib
+                  </span>
+                  <span class="tech-tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg"
+                      alt="Streamlit"
+                    />
+                    Streamlit
+                  </span>
+                  <span class="tech-tag">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                      alt="SQL"
+                    />
+                    SQL
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <i
+          class="bx bx-caret-down section-scroll-arrow"
+          onclick="scrollToNextSection(this)"
+        ></i>
+      </section>
+
+      <!-- References Section -->
+      <section id="references" class="references-section fade-in-element">
+        <div class="section-container">
+          <h2 class="section-title">
+            <i class="fas fa-certificate"></i> References & Achievements
+          </h2>
+
+          <div class="references-content slide-up-element">
+            <!-- Certificates Section -->
+            <div class="references-category">
+              <h3><i class="fas fa-award"></i> Certificates</h3>
+              <div class="references-grid">
+                <div class="reference-card">
+                  <div class="reference-image">
+                    <img
+                      src="static/images/cert_placeholder.png"
+                      alt="Certificate"
+                    />
+                  </div>
+                  <div class="reference-content">
+                    <h4>Data Science Certificate</h4>
+                    <p class="reference-issuer">Coursera - Google</p>
+                    <p class="reference-date">2024</p>
+                    <p class="reference-description">
+                      Comprehensive data science program covering Python, SQL,
+                      and machine learning fundamentals.
+                    </p>
+                    <div class="reference-skills">
+                      <span class="skill-tag">Python</span>
+                      <span class="skill-tag">SQL</span>
+                      <span class="skill-tag">Machine Learning</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="reference-card">
+                  <div class="reference-image">
+                    <img
+                      src="static/images/cert_placeholder.png"
+                      alt="Certificate"
+                    />
+                  </div>
+                  <div class="reference-content">
+                    <h4>Python Programming Certificate</h4>
+                    <p class="reference-issuer">edX - MIT</p>
+                    <p class="reference-date">2023</p>
+                    <p class="reference-description">
+                      Advanced Python programming concepts and data structures.
+                    </p>
+                    <div class="reference-skills">
+                      <span class="skill-tag">Python</span>
+                      <span class="skill-tag">Data Structures</span>
+                      <span class="skill-tag">Algorithms</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activities Section -->
+            <div class="references-category">
+              <h3><i class="fas fa-users"></i> Activities & Competitions</h3>
+              <div class="references-grid">
+                <div class="reference-card">
+                  <div class="reference-image">
+                    <img
+                      src="static/images/activity_placeholder.png"
+                      alt="Activity"
+                    />
+                  </div>
+                  <div class="reference-content">
+                    <h4>Data Science Hackathon</h4>
+                    <p class="reference-issuer">VNU-HCM</p>
+                    <p class="reference-date">2024</p>
+                    <p class="reference-description">
+                      Participated in university-wide data science competition,
+                      achieved top 10 position.
+                    </p>
+                    <div class="reference-skills">
+                      <span class="skill-tag">Team Work</span>
+                      <span class="skill-tag">Problem Solving</span>
+                      <span class="skill-tag">Data Analysis</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="reference-card">
+                  <div class="reference-image">
+                    <img
+                      src="static/images/activity_placeholder.png"
+                      alt="Activity"
+                    />
+                  </div>
+                  <div class="reference-content">
+                    <h4>Student Research Conference</h4>
+                    <p class="reference-issuer">UEL Faculty</p>
+                    <p class="reference-date">2023</p>
+                    <p class="reference-description">
+                      Presented research on economic data analysis using machine
+                      learning techniques.
+                    </p>
+                    <div class="reference-skills">
+                      <span class="skill-tag">Research</span>
+                      <span class="skill-tag">Presentation</span>
+                      <span class="skill-tag">Academic Writing</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -785,6 +1441,7 @@
               <li><a href="#skills">Skills</a></li>
               <li><a href="#projects">Projects</a></li>
               <li><a href="#experience">Experience</a></li>
+              <li><a href="#references">References</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="/blog">Blog</a></li>
               <!-- This link might need adjustment if /blog is also static -->
@@ -919,116 +1576,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-      // Skills Radar Chart
-      const skillsRadarCtx = document.getElementById("skillsRadarChart");
-      if (skillsRadarCtx) {
-        const skillCategories = [
-          "Programming",
-          "Frontend",
-          "Backend",
-          "Applications",
-          "Data Science",
-          "Data Engineer",
-          "ML & DL",
-          "Databases",
-        ];
-        const proficiencyData = [4, 3, 3, 3, 5, 2, 4, 4];
-
-        // Theme-dependent colors
-        const isDarkMode = document.body.classList.contains("dark-mode");
-        const chartLineColor = isDarkMode
-          ? "rgb(255, 255, 255)"
-          : "rgb(0, 0, 0)";
-        const chartFillColor = isDarkMode
-          ? "rgba(255, 255, 255, 0.1)"
-          : "rgba(0, 0, 0, 0.1)";
-        const chartPointBorderColor = isDarkMode ? "rgb(40, 40, 40)" : "#fff";
-        const chartPointHoverBackgroundColor = isDarkMode
-          ? "rgb(40, 40, 40)"
-          : "#fff";
-        const gridAndAngleLineColor = isDarkMode
-          ? "rgba(255, 255, 255, 0.4)"
-          : "rgba(0, 0, 0, 0.3)"; // Enhanced contrast
-
-        new Chart(skillsRadarCtx, {
-          type: "radar",
-          data: {
-            labels: skillCategories,
-            datasets: [
-              {
-                label: "Proficiency Level",
-                data: proficiencyData,
-                fill: true,
-                backgroundColor: chartFillColor,
-                borderColor: chartLineColor,
-                borderWidth: 2, // Increased border width for the dataset line
-                pointBackgroundColor: chartLineColor,
-                pointBorderColor: chartPointBorderColor,
-                pointHoverBackgroundColor: chartPointHoverBackgroundColor,
-                pointHoverBorderColor: chartLineColor,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            scales: {
-              r: {
-                angleLines: {
-                  display: true,
-                  color: gridAndAngleLineColor, // Theme-aware angle lines with better contrast
-                },
-                grid: {
-                  color: gridAndAngleLineColor, // Theme-aware grid lines with better contrast
-                },
-                suggestedMin: 0,
-                suggestedMax: 5,
-                pointLabels: {
-                  font: {
-                    size: 13,
-                    weight: "bold", // Make point labels bold
-                  },
-                  color: chartLineColor, // Theme-aware point label color
-                },
-                ticks: {
-                  stepSize: 1,
-                  backdropColor: "rgba(0,0,0,0)",
-                  color: chartLineColor, // Theme-aware tick label color
-                },
-              },
-            },
-            plugins: {
-              legend: {
-                display: false,
-              },
-              tooltip: {
-                callbacks: {
-                  label: function (context) {
-                    let label = context.dataset.label || "";
-                    if (label) {
-                      label += ": ";
-                    }
-                    if (context.parsed.r !== null) {
-                      const proficiencyLabelsRadar = {
-                        1: "Beginner",
-                        2: "Intermediate",
-                        3: "Proficient",
-                        4: "Advanced",
-                        5: "Expert",
-                      };
-                      label +=
-                        proficiencyLabelsRadar[context.parsed.r] ||
-                        context.parsed.r;
-                    }
-                    return label;
-                  },
-                },
-              },
-            },
-          },
-        });
-      }
-
       // Update copyright year
       document.getElementById("current-year").textContent =
         new Date().getFullYear();
@@ -1064,9 +1611,6 @@
 
       // Skills Section
       sr.reveal("#skills .section-title", {});
-      sr.reveal("#skills .skill-chart-above-grid-container .chart-wrapper", {
-        delay: 200,
-      });
       sr.reveal("#skills .skills-grid .skill-category", { interval: 150 });
 
       // Projects Section
