@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Typing effect for subtitle with loop
   const typingTextSpan = document.getElementById("typing-text");
-  const textsToType = ["Data Science fresher", "Data Analytics fresher"];
+  const textsToType = [
+    "Data Science enthusiast",
+    "Data Analyst",
+    "Welcome to my portfolio!",
+  ];
   let textIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
