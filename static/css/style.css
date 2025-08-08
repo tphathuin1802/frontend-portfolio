@@ -903,6 +903,8 @@ section {
   border-color: var(--primary-accent-color);
 }
 
+/* focus styles removed for classic skills look */
+
 .skill-icon {
   display: flex;
   align-items: center;
@@ -964,6 +966,8 @@ section {
   color: white;
 }
 
+/* removed skill level meter for classic style */
+
 .skill-experience {
   margin: 0;
   font-size: 0.75rem;
@@ -1005,6 +1009,54 @@ section {
   }
   .skill-experience {
     font-size: 0.7rem;
+  }
+}
+
+/* Section titles: center and underline accent */
+.section-title {
+  position: relative;
+  text-align: center;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 80px;
+  height: 3px;
+  background: currentColor;
+  opacity: 0.25;
+  border-radius: 2px;
+}
+
+/* Focus states for interactive elements */
+.btn:focus-visible,
+.filter-btn:focus-visible,
+.nav-link:focus-visible,
+.project-btn:focus-visible,
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Inputs focus ring */
+.contact-form .form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-accent-color);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
   }
 }
   /* Remove styles for skills-layout-container and its columns as they are no longer used */
@@ -1261,6 +1313,79 @@ section {
 .projects-section {
   background: var(--bg-color);
   padding: 5rem 0;
+}
+
+.projects-filters {
+  position: sticky;
+  top: 70px; /* below header */
+  z-index: 5;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  margin: 0.5rem auto 1.5rem;
+  padding: 0.5rem 0.75rem;
+  max-width: 1200px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.04),
+    rgba(0, 0, 0, 0.02)
+  );
+}
+
+.projects-filters::-webkit-scrollbar {
+  height: 6px;
+}
+.projects-filters::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 6px;
+}
+
+.filter-btn {
+  border: 1px solid var(--border-color, #e0e0e0);
+  background: var(--card-bg-color, var(--bg-color));
+  color: var(--text-color);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.filter-btn i {
+  font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary-accent-color, #333);
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  background: var(--primary-accent-color, #333);
+  color: #fff;
+  border-color: var(--primary-accent-color, #333);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.project-card.is-hidden {
+  display: none !important;
+}
+
+.projects-empty-state {
+  text-align: center;
+  color: var(--item-text-color);
+  padding: 1.5rem 0.5rem 0;
+  font-size: 0.95rem;
 }
 
 .projects-grid {

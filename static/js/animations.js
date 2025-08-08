@@ -183,6 +183,88 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Projects filter buttons
+  const filterContainer = document.querySelector(".projects-filters");
+  const filterButtons = document.querySelectorAll(
+    ".projects-filters .filter-btn"
+  );
+  function applyFilter(category) {
+    const allCards = document.querySelectorAll(
+      "#projects .projects-grid .project-card"
+    );
+    let visibleCount = 0;
+
+    allCards.forEach((card) => {
+      const cardCategory = card.getAttribute("data-category") || "";
+      const shouldShow = category === cardCategory;
+      card.classList.toggle("is-hidden", !shouldShow);
+      if (shouldShow) {
+        visibleCount += 1;
+        // Ensure visible even if ScrollReveal hid it
+        card.style.visibility = "visible";
+        card.style.opacity = "1";
+        card.style.transform = "none";
+        card.removeAttribute("data-sr-id");
+      }
+    });
+
+    // Empty state message
+    let empty = document.querySelector("#projects .projects-empty-state");
+    if (!empty) {
+      empty = document.createElement("div");
+      empty.className = "projects-empty-state";
+      empty.textContent = "No projects in this category (updating soon).";
+      const container = document.querySelector("#projects .section-container");
+      container?.appendChild(empty);
+    }
+    empty.style.display = visibleCount === 0 ? "block" : "none";
+
+    // Re-run ScrollReveal for shown cards if available
+    try {
+      if (typeof sr !== "undefined" && visibleCount > 0) {
+        sr.reveal("#projects .projects-grid .project-card:not(.is-hidden)", {
+          reset: false,
+        });
+      }
+    } catch (e) {
+      // no-op if ScrollReveal not ready
+    }
+
+    // Persist selection
+    try {
+      localStorage.setItem("projects.activeFilter", category);
+    } catch (e) {}
+  }
+
+  if (filterContainer && filterButtons.length) {
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+        const selected = btn.getAttribute("data-filter");
+        applyFilter(selected);
+      });
+    });
+
+    // Initialize from saved filter or active button
+    let saved = null;
+    try {
+      saved = localStorage.getItem("projects.activeFilter");
+    } catch (e) {}
+    const initialBtn = saved
+      ? filterContainer.querySelector(`.filter-btn[data-filter="${saved}"]`)
+      : filterContainer.querySelector(".filter-btn.active");
+    if (initialBtn) {
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      initialBtn.classList.add("active");
+      initialBtn.setAttribute("aria-selected", "true");
+      applyFilter(initialBtn.getAttribute("data-filter"));
+    }
+  }
   const animatedElements = document.querySelectorAll(
     ".fade-in-element, .slide-up-element, .scale-in-element, .animated-item"
   );

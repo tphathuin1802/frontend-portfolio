@@ -633,9 +633,51 @@
           <h2 class="section-title">
             <i class="fas fa-project-diagram"></i> Projects
           </h2>
+          <div
+            class="projects-filters"
+            role="tablist"
+            aria-label="Project categories"
+          >
+            <button
+              class="filter-btn active"
+              data-filter="analyst"
+              role="tab"
+              aria-selected="true"
+            >
+              <i class="fas fa-chart-line" aria-hidden="true"></i>
+              <span>Data Analyst</span>
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="engineer"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="fas fa-database" aria-hidden="true"></i>
+              <span>Data Engineer</span>
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="webdata"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="fas fa-globe" aria-hidden="true"></i>
+              <span>Web Data</span>
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="fintech"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="fas fa-coins" aria-hidden="true"></i>
+              <span>Fintech</span>
+            </button>
+          </div>
           <div class="projects-grid slide-up-element">
             <!-- Project Card 1: Stock Strategy Backtesting -->
-            <article class="project-card">
+            <article class="project-card" data-category="fintech">
               <div class="project-image-container">
                 <img
                   src="static/images/stock_project.png"
@@ -702,7 +744,7 @@
             </article>
 
             <!-- Project Card 2: Data Visualization with Streamlit -->
-            <article class="project-card">
+            <article class="project-card" data-category="analyst">
               <div class="project-image-container">
                 <img
                   src="static/images/dataviz_project1.png"
@@ -769,7 +811,7 @@
             </article>
 
             <!-- Project Card 3: Cardify system database -->
-            <article class="project-card">
+            <article class="project-card" data-category="engineer">
               <div class="project-image-container">
                 <img
                   src="static/images/cardify_project.png"
@@ -825,7 +867,7 @@
             </article>
 
             <!-- Project Card 4: Movie Recommendation System -->
-            <article class="project-card">
+            <article class="project-card" data-category="analyst">
               <div class="project-image-container">
                 <img
                   src="static/images/movie_project.png"
@@ -886,7 +928,7 @@
 
             <!-- Add more project cards as needed -->
             <!-- Project Card 4: Fake news detection-->
-            <article class="project-card">
+            <article class="project-card" data-category="webdata">
               <div class="project-image-container">
                 <img
                   src="static/images/fake_news_project.png"
@@ -946,7 +988,7 @@
             </article>
 
             <!-- Project Card 5: Threads Sentiment Analysis -->
-            <article class="project-card">
+            <article class="project-card" data-category="webdata">
               <div class="project-image-container">
                 <img
                   src="static/images/thread_project.png"
@@ -994,7 +1036,7 @@
 
             <!-- Spain EPU Time series forecasting -->
             <!-- Project Card 5: Threads Sentiment Analysis -->
-            <article class="project-card">
+            <article class="project-card" data-category="fintech">
               <div class="project-image-container">
                 <img
                   src="static/images/time_series.png"
@@ -1045,7 +1087,7 @@
             </article>
             <!-- Project pending -->
             <!-- Project Card 5: Threads Sentiment Analysis -->
-            <article class="project-card">
+            <article class="project-card" data-category="fintech">
               <div class="project-image-container">
                 <img
                   src="static/images/time_series.png"
