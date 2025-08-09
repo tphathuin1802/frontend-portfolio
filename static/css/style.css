@@ -574,8 +574,14 @@ section {
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .highlight {
@@ -1059,8 +1065,8 @@ a:focus-visible {
     animation: none !important;
   }
 }
-  /* Remove styles for skills-layout-container and its columns as they are no longer used */
-  /*
+/* Remove styles for skills-layout-container and its columns as they are no longer used */
+/*
   .skills-layout-container {
     flex-direction: column; 
   }
@@ -1071,7 +1077,6 @@ a:focus-visible {
     max-width: 100%; 
   }
   */
-}
 
 /* ==========================================================================
    Skills Layout Container Styles (Side-by-side: Chart Left, Grid Right) - REMOVE THESE
@@ -2152,7 +2157,7 @@ button.btn-visit-blog:hover {
     font-size: 0.7rem;
     padding: 0.2rem 0.4rem;
   }
-  
+
   .tag img {
     width: 14px;
     height: 14px;
@@ -2362,53 +2367,53 @@ button.btn-visit-blog:hover {
   .experience-content {
     padding: 0 1rem;
   }
-  
+
   .experience-item {
     padding: 1.5rem;
   }
-  
+
   .experience-header {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 1rem;
   }
-  
+
   .experience-company-logo {
     width: 50px;
     height: 50px;
   }
-  
+
   .experience-details h4 {
     font-size: 1.4rem;
   }
-  
+
   .experience-company {
     font-size: 1rem;
   }
-  
+
   .experience-duration {
     font-size: 0.85rem;
   }
-  
+
   .experience-description {
     font-size: 0.9rem;
   }
-  
+
   .experience-achievements h5,
   .experience-technologies h5 {
     font-size: 1rem;
   }
-  
+
   .tech-tags {
     gap: 0.5rem;
   }
-  
+
   .tech-tag {
     font-size: 0.8rem;
     padding: 0.4rem 0.6rem;
   }
-  
+
   .tech-tag img {
     width: 16px;
     height: 16px;
@@ -2594,9 +2599,15 @@ button.btn-visit-blog:hover {
 }
 
 @keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .pending-content h4 {
@@ -2635,23 +2646,23 @@ button.btn-visit-blog:hover {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .reference-card {
     margin: 0 1rem;
   }
-  
+
   .reference-content {
     padding: 1.25rem;
   }
-  
+
   .reference-content h4 {
     font-size: 1.2rem;
   }
-  
+
   .reference-image {
     height: 150px;
   }
-  
+
   .references-category h3 {
     font-size: 1.6rem;
   }
@@ -2661,37 +2672,37 @@ button.btn-visit-blog:hover {
   .references-grid {
     gap: 1rem;
   }
-  
+
   .reference-card {
     margin: 0 0.5rem;
   }
-  
+
   .reference-content {
     padding: 1rem;
   }
-  
+
   .reference-content h4 {
     font-size: 1.1rem;
   }
-  
+
   .reference-skills .skill-tag {
     font-size: 0.75rem;
     padding: 0.25rem 0.5rem;
   }
-  
+
   .pending-card {
     margin: 0 1rem;
     padding: 1.5rem;
   }
-  
+
   .pending-icon i {
     font-size: 2.5rem;
   }
-  
+
   .pending-content h4 {
     font-size: 1.3rem;
   }
-  
+
   .pending-text {
     font-size: 0.9rem;
   }
@@ -2738,3 +2749,149 @@ button.btn-visit-blog:hover {
 */
 
 /* The file should end cleanly after this comment. */
+/* ==========================================================================
+   Music Floating Button and Popup
+   ========================================================================= */
+.music-fab {
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 2px solid var(--text-color);
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1100;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.music-fab:hover {
+  transform: scale(1.08);
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+.music-popup {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: rgba(20, 20, 20, 0.85);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  width: min(560px, calc(100% - 24px));
+  padding: 12px 14px 12px 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.music-popup.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+.music-popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.music-title {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.music-popup-close {
+  background: transparent;
+  border: none;
+  color: inherit;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.music-popup-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .music-popup {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.dark-mode .music-fab:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* Music embed beautify */
+.music-embed {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 10px;
+}
+.music-embed iframe {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.music-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #ddd;
+  padding: 4px 2px 8px 2px;
+}
+.music-meta .track-title {
+  font-weight: 700;
+  color: #fff;
+}
+.music-meta .artist-link {
+  color: #bbb;
+  text-decoration: none;
+}
+.music-meta .artist-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.music-meta .dot {
+  opacity: 0.6;
+}
+
+.player-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+.open-sc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #ff6a00;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.open-sc-btn:hover {
+  filter: brightness(1.05);
+}

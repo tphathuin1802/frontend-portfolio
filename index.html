@@ -1729,6 +1729,72 @@
       </div>
     </footer>
 
+    <!-- Floating Music Button -->
+    <button
+      id="music-fab"
+      class="music-fab"
+      aria-label="Open music player"
+      aria-controls="music-popup"
+    >
+      <i class="fas fa-music" aria-hidden="true"></i>
+    </button>
+
+    <!-- Music Popup (Top-Center) -->
+    <div
+      id="music-popup"
+      class="music-popup"
+      role="dialog"
+      aria-modal="false"
+      aria-hidden="true"
+    >
+      <div class="music-popup-header">
+        <div class="music-title">
+          <i class="fas fa-headphones" aria-hidden="true"></i>
+          <span>My Favorite Playlist</span>
+        </div>
+        <button
+          class="music-popup-close"
+          id="music-popup-close"
+          aria-label="Close music player"
+        >
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="music-embed">
+        <div class="music-meta">
+          <span class="track-title">Blue Boi</span>
+          <span class="dot">•</span>
+          <a
+            href="https://soundcloud.com/lakeyinspired"
+            target="_blank"
+            rel="noopener"
+            class="artist-link"
+            >LAKEY INSPIRED</a
+          >
+        </div>
+        <iframe
+          title="SoundCloud Player - Blue Boi"
+          width="100%"
+          height="220"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/lakeyinspired/blue-boi&color=%23000000&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        ></iframe>
+        <div class="player-actions">
+          <a
+            class="open-sc-btn"
+            href="https://soundcloud.com/lakeyinspired/blue-boi"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fab fa-soundcloud" aria-hidden="true"></i>
+            Open in SoundCloud
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Success Modal (will not trigger automatically from Django messages anymore) -->
     <div
       class="modal fade"
@@ -1772,6 +1838,7 @@
     <script src="static/js/theme.js"></script>
     <script src="static/js/animations.js"></script>
     <script src="static/js/typing-animation.js"></script>
+    <script src="static/js/music.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
