@@ -97,7 +97,7 @@
               <a href="#experience" class="nav-link"> EXPERIENCES </a>
             </li>
             <li>
-              <a href="#references" class="nav-link"> REFERENCES </a>
+              <a href="#work" class="nav-link"> WORK </a>
             </li>
             <li>
               <a href="#contact" class="nav-link"> CONTACT </a>
@@ -1348,19 +1348,59 @@
         ></i>
       </section>
 
-      <!-- References Section -->
-      <section id="references" class="references-section fade-in-element">
+      <!-- Work Section (formerly References) -->
+      <section id="work" class="references-section fade-in-element">
         <div class="section-container">
-          <h2 class="section-title">
-            <i class="fas fa-certificate"></i> References & Achievements
-          </h2>
+          <h2 class="section-title"><i class="fas fa-certificate"></i> Work</h2>
+
+          <!-- Work Filters -->
+          <div
+            class="projects-filters"
+            role="tablist"
+            aria-label="Work categories"
+          >
+            <button
+              class="filter-btn active"
+              data-filter="certification"
+              role="tab"
+              aria-selected="true"
+            >
+              <i class="fas fa-award" aria-hidden="true"></i>
+              <span>Certification</span>
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="achievement"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="fas fa-trophy" aria-hidden="true"></i>
+              <span>Achievement</span>
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="moment"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="fas fa-camera" aria-hidden="true"></i>
+              <span>Moment</span>
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="references"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="fas fa-user-friends" aria-hidden="true"></i>
+              <span>References</span>
+            </button>
+          </div>
 
           <div class="references-content slide-up-element">
-            <!-- Certificates Section -->
-            <div class="references-category">
-              <h3><i class="fas fa-award"></i> Certificates</h3>
-              <div class="references-grid">
-                <div class="reference-card">
+            <div class="references-grid work-grid">
+              <div class="work-track">
+                <div class="reference-card" data-category="certification">
                   <div class="reference-image">
                     <img
                       src="static/images/cert_google_data_analytic.png"
@@ -1395,8 +1435,7 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="reference-card">
+                <div class="reference-card" data-category="certification">
                   <div class="reference-image">
                     <img
                       src="static/images/cert_sql_advanced.png"
@@ -1431,8 +1470,7 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="reference-card">
+                <div class="reference-card" data-category="certification">
                   <div class="reference-image">
                     <img
                       src="static/images/cert_django.png"
@@ -1467,8 +1505,7 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="reference-card">
+                <div class="reference-card" data-category="certification">
                   <div class="reference-image">
                     <img
                       src="static/images/cert_aws.png"
@@ -1503,26 +1540,58 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- Activities Section -->
-            <div class="references-category">
-              <h3><i class="fas fa-users"></i> Activities & Competitions</h3>
-              <div class="references-pending">
-                <div class="pending-card">
-                  <div class="pending-icon">
-                    <i class="fas fa-clock"></i>
+                <!-- Achievement placeholder -->
+                <div class="reference-card" data-category="achievement">
+                  <div class="reference-image">
+                    <img
+                      src="static/images/activity_placeholder.png"
+                      alt="Achievements updating"
+                    />
                   </div>
-                  <div class="pending-content">
-                    <h4>Coming Soon</h4>
-                    <p class="pending-text">
-                      Activities and competitions section is currently being
-                      updated. Please check back later for exciting updates!
-                    </p>
-                    <div class="pending-status">
-                      <span class="status-badge">Pending</span>
-                    </div>
+                  <div class="reference-content">
+                    <h4>Achievements</h4>
+                    <p class="reference-description">Updating soon.</p>
+                  </div>
+                </div>
+
+                <!-- Moment placeholder removed (replaced by real moments) -->
+
+                <!-- References placeholder -->
+                <div class="reference-card" data-category="references">
+                  <div class="reference-image">
+                    <img
+                      src="static/images/cert_placeholder.png"
+                      alt="References updating"
+                    />
+                  </div>
+                  <div class="reference-content">
+                    <h4>Professional References</h4>
+                    <p class="reference-description">Updating soon.</p>
+                  </div>
+                </div>
+                <!-- duplicate for smooth loop -->
+                <div class="reference-card" data-category="certification">
+                  <div class="reference-image">
+                    <img
+                      src="static/images/cert_google_data_analytic.png"
+                      alt="Google Data Analytics Professional Certificate"
+                    />
+                  </div>
+                  <div class="reference-content">
+                    <h4>Google Data Analytics Professional Certificate</h4>
+                    <p class="reference-issuer">Coursera - Google</p>
+                  </div>
+                </div>
+                <div class="reference-card" data-category="certification">
+                  <div class="reference-image">
+                    <img
+                      src="static/images/cert_sql_advanced.png"
+                      alt="HackerRank SQL Advanced Certificate"
+                    />
+                  </div>
+                  <div class="reference-content">
+                    <h4>SQL (Advanced) Certificate</h4>
+                    <p class="reference-issuer">HackerRank</p>
                   </div>
                 </div>
               </div>
@@ -1645,7 +1714,7 @@
               <li><a href="#skills">Skills</a></li>
               <li><a href="#projects">Projects</a></li>
               <li><a href="#experience">Experience</a></li>
-              <li><a href="#references">References</a></li>
+              <li><a href="#work">Work</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="/blog">Blog</a></li>
               <!-- This link might need adjustment if /blog is also static -->

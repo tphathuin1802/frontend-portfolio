@@ -183,11 +183,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Projects filter buttons
-  const filterContainer = document.querySelector(".projects-filters");
-  const filterButtons = document.querySelectorAll(
-    ".projects-filters .filter-btn"
-  );
+  // Projects filter buttons (scoped to #projects)
+  const projectsSection = document.querySelector("#projects");
+  const filterContainer = projectsSection?.querySelector(".projects-filters");
+  const filterButtons =
+    projectsSection?.querySelectorAll(".projects-filters .filter-btn") || [];
   function applyFilter(category) {
     const allCards = document.querySelectorAll(
       "#projects .projects-grid .project-card"
@@ -236,6 +236,75 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (e) {}
   }
 
+  // Work (references) filter buttons
+  const workSection = document.querySelector("#work");
+  const workFilterContainer = workSection?.querySelector(".projects-filters");
+  const workFilterButtons =
+    workSection?.querySelectorAll(".projects-filters .filter-btn") || [];
+
+  function applyWorkFilter(category) {
+    const allCards =
+      workSection?.querySelectorAll(".work-grid .reference-card") || [];
+    let visibleCount = 0;
+
+    allCards.forEach((card) => {
+      const cardCategory = card.getAttribute("data-category") || "";
+      const shouldShow = category === cardCategory;
+      card.classList.toggle("is-hidden", !shouldShow);
+      if (shouldShow) {
+        visibleCount += 1;
+        card.style.visibility = "visible";
+        card.style.opacity = "1";
+        card.style.transform = "none";
+        card.removeAttribute("data-sr-id");
+      }
+    });
+
+    // Empty state message for Work
+    let empty = workSection?.querySelector(".projects-empty-state");
+    if (!empty && workSection) {
+      empty = document.createElement("div");
+      empty.className = "projects-empty-state";
+      empty.textContent = "No items in this category (updating soon).";
+      workSection.querySelector(".section-container")?.appendChild(empty);
+    }
+    if (empty) empty.style.display = visibleCount === 0 ? "block" : "none";
+
+    try {
+      localStorage.setItem("work.activeFilter", category);
+    } catch (e) {}
+  }
+
+  if (workFilterContainer && workFilterButtons.length) {
+    workFilterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        workFilterButtons.forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+        const selected = btn.getAttribute("data-filter");
+        applyWorkFilter(selected);
+      });
+    });
+
+    // Initialize Work filter
+    let saved = null;
+    try {
+      saved = localStorage.getItem("work.activeFilter");
+    } catch (e) {}
+    const initialBtn = saved
+      ? workFilterContainer.querySelector(`.filter-btn[data-filter="${saved}"]`)
+      : workFilterContainer.querySelector(".filter-btn.active");
+    if (initialBtn) {
+      workFilterButtons.forEach((b) => b.classList.remove("active"));
+      initialBtn.classList.add("active");
+      initialBtn.setAttribute("aria-selected", "true");
+      applyWorkFilter(initialBtn.getAttribute("data-filter"));
+    }
+  }
+
   if (filterContainer && filterButtons.length) {
     filterButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -265,6 +334,91 @@ document.addEventListener("DOMContentLoaded", () => {
       applyFilter(initialBtn.getAttribute("data-filter"));
     }
   }
+
+  // Drag-to-scroll for Work section marquee
+  (function initWorkDragScroll() {
+    const workGrid = document.querySelector("#work .work-grid");
+    if (!workGrid) return;
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    const onDown = (e) => {
+      isDown = true;
+      workGrid.classList.add("is-dragging");
+      startX = (e.touches ? e.touches[0].pageX : e.pageX) - workGrid.offsetLeft;
+      scrollLeft = workGrid.scrollLeft;
+    };
+    const onLeaveUp = () => {
+      isDown = false;
+      workGrid.classList.remove("is-dragging");
+    };
+    const onMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x =
+        (e.touches ? e.touches[0].pageX : e.pageX) - workGrid.offsetLeft;
+      const walk = (x - startX) * 1; // scroll-fastness factor
+      workGrid.scrollLeft = scrollLeft - walk;
+    };
+
+    workGrid.addEventListener("mousedown", onDown);
+    workGrid.addEventListener("mouseleave", onLeaveUp);
+    workGrid.addEventListener("mouseup", onLeaveUp);
+    workGrid.addEventListener("mousemove", onMove);
+    workGrid.addEventListener("touchstart", onDown, { passive: false });
+    workGrid.addEventListener("touchend", onLeaveUp);
+    workGrid.addEventListener("touchcancel", onLeaveUp);
+    workGrid.addEventListener("touchmove", onMove, { passive: false });
+  })();
+
+  // Populate Moment cards from image list
+  (function populateMomentCards() {
+    const workTrack = document.querySelector("#work .work-grid .work-track");
+    if (!workTrack) return;
+    const momentImages = [
+      "moment_corner_code.png",
+      "moment_chill.png",
+      "moment_vibe.png",
+      "moment_onepiece.png",
+      "moment_family.png",
+      "moment_coding_2.png",
+      "moment_coding_1.png",
+      "moment_coding.png",
+      "moment_tuyensinh.png",
+      "moment_data.png",
+      "moment_christmas.png",
+    ];
+
+    momentImages.forEach((file) => {
+      const card = document.createElement("div");
+      card.className = "reference-card";
+      card.setAttribute("data-category", "moment");
+
+      const imgWrap = document.createElement("div");
+      imgWrap.className = "reference-image";
+      const img = document.createElement("img");
+      img.src = `static/images/${file}`;
+      img.alt = file
+        .replace(/^moment_/, "")
+        .replace(/[_-]+/g, " ")
+        .replace(/\.[^.]+$/, "")
+        .trim();
+      img.loading = "lazy";
+      imgWrap.appendChild(img);
+
+      const content = document.createElement("div");
+      content.className = "reference-content";
+      const title = document.createElement("h4");
+      const pretty = img.alt.replace(/\b\w/g, (m) => m.toUpperCase());
+      title.textContent = pretty || "Moment";
+      content.appendChild(title);
+
+      card.appendChild(imgWrap);
+      card.appendChild(content);
+      workTrack.appendChild(card);
+    });
+  })();
   const animatedElements = document.querySelectorAll(
     ".fade-in-element, .slide-up-element, .scale-in-element, .animated-item"
   );

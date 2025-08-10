@@ -1386,6 +1386,52 @@ a:focus-visible {
   display: none !important;
 }
 
+/* Hide Work cards when filtered */
+.reference-card.is-hidden {
+  display: none !important;
+}
+
+/* Work section horizontal marquee rows */
+.work-grid {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  user-select: none;
+  cursor: grab;
+}
+.work-grid::-webkit-scrollbar {
+  display: none;
+}
+.work-grid .work-track {
+  display: flex;
+  gap: 1rem;
+  will-change: transform;
+  animation: workMarquee 30s linear infinite;
+  width: max-content;
+}
+.work-grid:hover .work-track {
+  animation-play-state: paused;
+}
+.work-grid.is-dragging {
+  cursor: grabbing;
+}
+.work-grid.is-dragging .work-track {
+  animation-play-state: paused;
+}
+.work-grid .reference-card {
+  flex: 0 0 340px;
+}
+
+@keyframes workMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .projects-empty-state {
   text-align: center;
   color: var(--item-text-color);
@@ -1431,6 +1477,8 @@ a:focus-visible {
   object-fit: cover;
   display: block;
 }
+
+/* Cards stay static: remove panning animations */
 
 .project-card-content {
   padding: 1.5rem;
